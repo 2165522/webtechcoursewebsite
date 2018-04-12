@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>WebTech2018</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../favicon2.ico" type="image/x-icon" />
+
+        <link href='https://fonts.googleapis.com/css?family=Hind' rel='stylesheet'>
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+
+    </head>
+
+    <body>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/tether.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+
+
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary sticky-top">
+            <a href="../index.html" class="navbar-brand font-weight-bold logo-color" id="logo">WEBTEK 2018</a>
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary text-uppercase" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary text-uppercase" href="../links/prelims.html">Prelims</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary text-uppercase" href="../links/midterms.html" id="active">Midterms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary text-uppercase" href="#">Finals</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="contents text-content-primary">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="link">
+                        <a href="#css2" onclick="toggle_visibility('css');"><h1>Cascading Style Sheets</h1></a>
+                    </div>
+                    <span class="anchor" id="css2"></span>
+                    <div class="cont" id="css">
+                        <ul>
+                            <li>language used to specify the presentation <span class="font-italic">(e.g. layout, formatting, fonts, colors, etc.)</span> of structurally marked up documents <span class="font-italic">(e.g. HTML)</span></li>
+                            <li>developed by Håkon Wium Lie and Bert Bos</li>
+                        </ul>
+                        <h3>Version History</h3>
+                        <ul>
+                            <li>CSS Level 1 <span class="font-italic"><a href="https://www.w3.org/TR/CSS1/">(CSS1, W3C Recommendation, Dec 1996)</a></span></li>
+                            <li>CSS Level 2 <span class="font-italic"><a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/">(CSS2, W3C Recommendation, May 1998)</a></span></li>
+                            <li>CSS Level 2 Revision 1 <span class="font-italic"><a href="https://www.w3.org/TR/CSS2/">(CSS 2.1, W3C Recommendation, June 2011)</a></span></li>
+                            <li>CSS Level 3 <span class="font-italic"><a href="https://www.w3.org/TR/2001/WD-css3-roadmap-20010523/">(CSS3, W3C Recommendation, May 2001)</a></span></li>
+                            <ul>
+                                <li>modular approach to CSS development (as opposed to the monolithic specification of CSS 2.1)</li>
+                            </ul>
+                        </ul>
+                        <h3>HTML Style Sheets</h3>
+                        <ul>
+                            <li>the source of a style denotes its origin, which is used in determining its precedence in the cascade</li>
+                            <li>sources of styles for HTML Documents</li>
+                            <ul>
+                                <li>author styles</li>
+                                <ul>
+                                    <span class="anchor" id="ext12"></span>
+                                    <li class="font-weight-bold">external (linked) stylesheets</li>
+                                    <p>The author/developer stores the css styles in a .css file<br><a href="#ext12" onclick="toggle_visibility('ext1');">(Sample Code)</a></p>
+                                    <div class="code-sample" id="ext1">
+                                        <span class="comment">/* style.css */</span><br>
+                                        .samp {<br>
+                                        <span class="indent">font-size: 2.5em;</span><br>
+                                        <span class="indent">color: green;</span><br>
+                                        }
+                                    </div>
+                                    <p>The link to the css file is declared in the &lt;head&gt; tag of the html file<br><a href="#ext22" onclick="toggle_visibility('ext2');">(Sample Code)</a></p>
+                                    <span class="anchor" id="ext22"></span>
+                                    <div class="code-sample" id="ext2">
+                                        <span class="comment">/* index.html with a link to an external stylesheet (style.css) */</span><br>
+                                        &lt;!DOCTYPE html&gt;<br>
+                                        &lt;html&gt;<br>
+                                        <span class="indent"></span>&lt;head&gt; <br>
+                                        <span class="emphasis">
+                                            <span class="indent2"></span>&lt;link type="text/css" rel="stylesheet" src="style.css"&gt;<br>
+                                        </span>
+                                        <span class="indent"></span>&lt;/head&gt; <br>
+                                        <span class="indent"></span>&lt;body&gt; <br>
+                                        <span class="indent2"></span>&lt;h1 class="samp"&gt;Hello World!&lt;/h1&gt;<br>
+                                        <span class="indent"></span>&lt;/body&gt; <br>
+                                        &lt;/html&gt; <br>
+                                    </div>
+
+                                    <span class="anchor" id="emb2"></span>
+                                    <li class="font-weight-bold">embedded (internal) stylesheets</li>
+                                    <p>The styles are declared inside a &lt;style&gt;&lt;/style&gt; tag. The &lt;style&gt;&lt;/style&gt; tag is declared inside the &lt;head&gt;&lt;/head&gt; tag<br><a href="#emb2" onclick="toggle_visibility('emb');">(Sample Code)</a></p>
+                                    <div class="code-sample" id="emb">
+                                        <span class="comment">/* index.html with an embedded css */</span><br>
+                                        &lt;!DOCTYPE html&gt;<br>
+                                        &lt;html&gt;<br>
+                                        <span class="indent"></span>&lt;head&gt; <br>
+                                        <span class="emphasis">
+                                            <span class="indent2"></span>&lt;style&gt; <br>
+                                        </span>
+                                        <span class="indent3"></span>.samp {<br>
+                                        <span class="indent4">font-size: 2.5em;</span><br>
+                                        <span class="indent4">color: green;</span><br>
+                                        <span class="indent3"></span>}<br>
+                                        <span class="emphasis"> 
+                                            <span class="indent2"></span>&lt;/style&gt; <br>
+                                        </span>
+                                        <span class="indent"></span>&lt;/head&gt; <br>
+                                        <span class="indent"></span>&lt;body&gt; <br>
+                                        <span class="indent2"></span>&lt;h1 class="samp"&gt;Hello World!&lt;/h1&gt;<br>
+                                        <span class="indent"></span>&lt;/body&gt; <br>
+                                        &lt;/html&gt; <br>
+                                    </div>
+                                    <span class="anchor" id="inl2"></span>
+                                    <li class="font-weight-bold">inline styles</li>
+                                    <p>The styles are declared inside an attribute (style) of an element.<br><a href="#inl2" onclick="toggle_visibility('inl');">(Sample Code)</a></p>
+                                    <div class="code-sample" id="inl">
+                                        <span class="comment">/* index.html with inline-declared styles */</span><br>
+                                        &lt;!DOCTYPE html&gt;<br>
+                                        &lt;html&gt;<br>
+                                        <span class="indent"></span>&lt;body&gt; <br>
+                                        <span class="indent2"></span>&lt;h1 class="samp" style="font-size: 2.5em; color:green;"&gt;Hello World!&lt;/h1&gt;<br>
+                                        <span class="indent"></span>&lt;/body&gt; <br>
+                                        &lt;/html&gt; <br>
+                                    </div>
+                                </ul>
+                            </ul>
+                            <li>user styles</li>
+                            <ul>
+                                <li>some browser provides (non-standard) alternatives through plugins/extensions
+                                    <span class="font-italic">(e.g.<a href="https://userstyles.org/"> stylish</a>)</span></li>
+                            </ul>
+                            <li>user agent styles</li>
+                            <ul>
+                                <li>sample default user agent stylesheet from CSS 2.1</li>
+                            </ul>
+                        </ul>
+                        <h3>CSS Statements</h3>
+                        <ul>
+                            <li>At-rules</li>
+                            <ul>
+                                <span class="anchor" id="charset2"></span>
+                                <li><a href="#charset2" onclick="toggle_visibility('charset');">@charset</a> - This rule is used to define the character set used by the browser.</li>
+                                <div class="code-sample" id="charset">
+                                    <span class="comment">/* Sample @charset declaration */</span><br>
+                                    @charset "UTF-8";
+                                </div>
+
+                                <span class="anchor" id="import2"></span>
+                                <li><a href="#import2" onclick="toggle_visibility('import');">@import</a> - This rule is used by a .css file to import another external stylesheet (css file) in the file.</li>
+                                <div class="code-sample" id="import">
+                                    <span class="comment">/* The rule is declared at the very top of the file */ </span><br>
+                                    @import 'style2.css';
+                                </div>
+
+                                <span class="anchor" id="namespace2"></span>
+                                <li><a href="#namespace2" onclick="toggle_visibility('namespace');">@namespace</a> - This rule is used particularly for XHTML files so that the XHTML elements can be accessed as selectors in the CSS.</li>
+                                <div class="code-sample" id="namespace">
+                                    <span class="comment">/* Namespace for XHTML */</span><br>
+                                    @namespace url(http://www.w3.org/1999/xhtml);
+                                </div>
+
+                                <span class="anchor" id="media2"></span>
+                                <li><a href="#media2" onclick="toggle_visibility('media');">@media</a> - This rule is used to set conditional statements to specific screens.</li>
+                                <div class="code-sample" id="media">
+                                    <span class="comment">/* Sample @media declaration */</span><br>
+                                    @media (min-width: 768px) {<br><span class="indent"></span>font-size: 2em;<br>}<br>
+                                    @media (min-width: 576px) {<br><span class="indent"></span>font-size: 1.5em;<br>}
+                                </div>
+
+                                <span class="anchor" id="font-face2"></span>
+                                <li><a href="#font-face2" onclick="toggle_visibility('font-face');">@font-face</a> - This rule is used to link a custom font to be used on the website, with this rule, you can also customize the font attributes of that certain font.</li>
+                                <div class="code-sample" id="font-face">
+                                    <span class="comment">/* Sample @font-face declaration */</span><br>
+                                    @font-face {<br><span class="indent"></span>font-family: 'MyFont';<br><span class="indent"></span>src: url('font.otf') format('otf'),<br><span class="indent3"></span>url('font.ttf') format('ttf');<br>}
+                                </div>
+
+                                <span class="anchor" id="keyframes2"></span>
+                                <li><a href="#keyframes2" onclick="toggle_visibility('keyframes');">@keyframes</a> - This rule is used for keyframe animations on CSS properties, allowing every developer to mark the start, stop, and in-between marks for the animation.</li>
+                                <div class="code-sample" id="keyframes">
+                                    <span class="comment">/* Sample @keyframes declaration */</span><br>
+                                    @keyframes pulse {<br>
+                                    <span class="indent"></span>50% {<br><span class="indent2"></span>background-color: #ccc;<br><span class="indent"></span>}<br><span class="indent"></span>100% {<br><span class="indent2"></span>background-color: #eee;<br><span class="indent"></span>}<br>
+                                </div>
+                                Reference: <i>https://css-tricks.com/the-at-rules-of-css/</i>
+                            </ul>
+                            <li>CSS Rule Sets (a.k.a., CSS Rules, Style Rules)</li>
+                            <ul>
+                                <li>Consists of a selector, followed by a brace-enclosed declataion block, which contains zero or more semi-colon (;) separated properly declaration which in turn consists of a property name followed by a colon (:) followed by a property value</li>
+                            </ul>
+                        </ul>
+                        <h3>CSS Selector</h3>
+                        <ul>
+                            <li>Structure used as a condition in a CSS rule to determine which elements in the document tree are 
+                                matched by the selector and are thus targeted by the formatting specified in the CSS rule declaration block</li>
+                            <li>The matched elements are called the <span class="emphasis font-italic">subjects</span> of the selector</li>
+
+                            <li>Selector Syntax</li>
+                            <ul>
+                                <li>chain of one or more sequences of simple selectors separated by combinations with one pseudo 
+                                    element possibly appended to the last sequence</li>
+                                <li>sequence of simple selectors</li>
+                                <ul>
+                                    <li>chain of simple selectors not separated by combinators</li>
+                                    <li>always starts with a <i>type selector</i> or a <i>universal selector</i>(may be implied)</li>
+                                    <li>cannot contain other type selectors or universal selectors</li>
+                                </ul>
+                            </ul>
+                            <li>The subjects of a single sequence of simple selectors are the elements that match <i>all</i> the selectors in the sequence</li>
+                            <li>Combinators are used to impose additional matching <i>constraints</i> applied by <i>prepending</i> another sequence of selectors and the combinator to a sequence. with the subjects of the entire selector being some <i>subset</i> of the elements matched by the <i>last</i> sequence</li>
+                            <li class="font-weight-bold">Types of Simple Selectors</li>
+                            <ul>
+                                <span class="anchor" id="1sel2"></span>
+                                <li><a href="#1sel2" onclick="toggle_visibility('1sel');">Universal Selector:</a></li>
+                                <div class="code-sample" id="1sel">
+                                    * {<br>
+                                    <span class="indent">color: blue;</span><br>}
+                                </div>
+                                <span class="anchor" id="typesel2"></span>
+                                <li><a href="#typsel2" onclick="toggle_visibility('typsel');">Type Selectors:</a></li>
+                                <div class="code-sample" id="typsel">
+                                    h2 {<br>
+                                    <span class="indent"></span>color: #fff;<br>}
+                                </div>
+                                <span class="anchor" id="idsel2"></span>
+                                <li><a href="#idsel2" onclick="toggle_visibility('idsel');">ID Selectors:</a></li>
+                                <div class="code-sample" id="idsel">
+                                    #navBar {<br>
+                                    <span class="indent"></span>padding-right: 2px;<br>}
+                                </div>
+                                <span class="anchor" id="csel2"></span>
+                                <li><a href="#csel2" onclick="toggle_visibility('csel');">Class Selectors:</a></li>
+                                <div class="code-sample" id="csel">
+                                    ul.top-ten {<br>
+                                    <span class="indent"></span>list-style: square;<br>}
+                                </div>
+                                <span class="anchor" id="attsel2"></span>
+                                <li><a href="#attsel2" onclick="toggle_visibility('attsel');">Attribute Selectors:</a></li>
+                                <div class="code-sample" id="attsel">
+                                    h1[lang != fr] {<br>
+                                    <span class="indent"></span>font-style: bold;<br>}
+                                </div>
+                            </ul>
+                        </ul>
+                        <h3>Pseudo-Classes</h3>
+                        <ul>
+                            <li>Dynamic Pseudo-Classes</li>
+                            <ul>
+                                <li>link pseudo-classes</li>
+                                <ul>
+                                    <span class="anchor" id="link2"></span>
+                                    <li><a href="#link2" onclick="toggle_visibility('link');">:link</a></li>
+                                    <div class = "code-sample" id ="link">
+                                        <span class = "comment">/*unvisited link*/</span><br>
+                                        a:link {<br>
+                                        <span class = "indent"></span>color: #FF0000;<br>}
+                                    </div>
+                                    <span class="anchor" id="visited2"></span>
+                                    <li><a href="#visited2" onclick="toggle_visibility('visited');">:visited</a></li>
+                                    <div class = "code-sample" id ="visited">
+                                        <span class = "comment">/*visited link*/</span><br>
+                                        a:visited {<br>
+                                        <span class = "indent"></span>color: #OOFFOO;<br>}
+                                    </div>
+                                </ul>
+                                <li>user action pseudo-classes</li>
+                                <ul>
+                                    <span class="anchor" id="hover2"></span>
+                                    <li><a href="#hover2" onclick="toggle_visibility('hover');">:hover</a></li>
+                                    <div class = "code-sample" id ="hover">
+                                        <span class = "comment">/*mouse over link*/</span><br>
+                                        a:hover {<br>
+                                        <span class = "indent"></span>color: #FF00FF;<br>}
+                                    </div>
+                                    <span class="anchor" id="active2"></span>
+                                    <li><a href="#active2" onclick="toggle_visibility('actve');">:active</a></li>
+                                    <div class = "code-sample" id ="actve">
+                                        <span class = "comment">/*selected link*/</span><br>
+                                        a:active {<br>
+                                        <span class = "indent"></span>color: #0000FF;<br>}
+                                    </div>
+                                    <span class="anchor" id="focus2"></span>
+                                    <li><a href="#focus2" onclick="toggle_visibility('focus');">:focus</a></li>
+                                    <div class = "code-sample" id ="focus">
+                                        <span class = "comment">/*triggered when the hyperlink has focus*/</span><br>
+                                        a:focus {<br>
+                                        <span class = "indent"></span>color: #099CC;<br>}
+                                    </div>
+                                </ul>
+                            </ul>
+                            <li>Target Pseudo-Class</li>
+                            <ul>
+                                <span class="anchor" id="target2"></span>
+                                <li><a href="#target2" onclick="toggle_visibility('target');">:target</a></li>
+                                <div class = "code-sample" id ="target">
+                                    h1:target {<br>
+                                    <span class = "indent"></span>font-size: 25px;<br>
+                                    <span class = "indent"></span>text-decoration: italized;<br>
+                                    <span class = "indent"></span>color: #37aee4;<br>}
+                                </div>
+                            </ul>
+                            <li>Language Pseudo-Class</li>
+                            <ul>
+                                <span class="anchor" id="lang2"></span>
+                                <li><a href="#lang2" onclick="toggle_visibility('lang');">:lang()</a></li>
+                                <div class = "code-sample" id ="lang">
+                                    p:lang(it) { <br>
+                                    <span class = "indent"></span>background: green;<br>}
+                                </div>
+                            </ul>
+                            <li>UI Element States Pseudo-Classes</li>
+                            <ul>
+                                <span class="anchor" id="enabled2"></span>
+                                <li><a href="#enabled2" onclick="toggle_visibility('enabled');">:enabled</a></li>
+                                <div class = "code-sample" id ="enabled">
+                                    <span class = "comment">/*Selects enabled input*/</span><br>
+                                    input:enabled {<br>
+                                    <span class= "indent"></span>color: yellow;<br>}
+                                </div>
+                                <span class="anchor" id="disabled2"></span>
+                                <li><a href="#disabled2" onclick="toggle_visibility('disabled');">:disabled</a></li>
+                                <div class = "code-sample" id ="disabled">
+                                    <span class = "comment">/*Selects disabled input*/</span><br>
+                                    input:disabled {<br>
+                                    <span class= "indent"></span>background-color: red;<br>}
+                                </div>
+                                <span class="anchor" id="checked2"></span>
+                                <li><a href="#checked2" onclick="toggle_visibility('checked');">:checked</a></li>
+                                <div class = "code-sample" id ="checked">
+                                    <span class = "comment">/*Matches checked radio, checkbox, etc.*/</span><br>
+                                    :checked {<br>
+                                    <span class = "indent"></span>border: 5px red;<br>}
+                                </div>
+                                <span class="anchor" id="indeterminate2"></span>
+                                <li><a href="#indertiminate2" onclick="toggle_visibility('indeterminate');">:indeterminate</a></li>
+                                <div class = "code-sample" id ="indeterminate">
+                                    <span class = "comment">/*Selects input  that the status is indeterminate*/</span><br>
+                                    input:indeterminate {<br>
+                                    <span class = "indent"></span>background: violet;<br>}
+                                </div>
+                            </ul>
+                            <li>Structural Pseudo-Classes</li>
+                            <ul>
+                                <span class="anchor" id="root2"></span>
+                                <li><a href="#root2" onclick="toggle_visibility('root');">:root</a></li>
+                                <div class = "code-sample" id ="root">
+                                    <span class = "comment">/*Selects the root element*/</span><br>
+                                    :root { <br>
+                                    <span class = "indent"></span>background: blue;<br>}
+                                </div>
+                                <li>
+                                    <a href="#fchild2" onclick="toggle_visibility('fchild');">:first-child</a>,
+                                    <a href="#lchild2" onclick="toggle_visibility('lchild');">:last-child</a> ,
+                                    <a href="#ochild2" onclick="toggle_visibility('ochild');">:only-child</a>,
+                                    <a href="#nchild2" onclick="toggle_visibility('nchild');">:nth-child()</a>,
+                                    <a href="#nlchild2" onclick="toggle_visibility('nlchild');">:nth-last-child()</a>
+                                </li>
+                                <div class = "code-sample" id ="fchild">
+                                    <span class = "comment">/*Selects any type that is the 1st element among its siblings*/</span><br>
+                                    p:first-child {<br>
+                                    <span class = "indent"></span>color: yellow;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="lchild">
+                                    <span class = "comment">/*Selects any type that is the last element among its siblings*/</span><br>
+                                    p:last-child {<br>
+                                    <span class = "indent"></span>color: brown;<br>}<br>
+                                </div>
+
+                                <div class = "code-sample" id ="ochild">
+                                    <span class = "comment">/*Selects every type if and only if it is the only child of its parent*/</span><br>
+                                    p:only-child {<br>
+                                    <span class = "indent"></span>color: green;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="nchild">
+                                    <span class = "comment">/*Selects every nth element among any group of siblings*/</span><br>
+                                    :nth-child(7n) {<br>
+                                    <span class = "indent"></span>color: yellow;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="nlchild">
+                                    <span class = "comment">/*Selects every nth element but counting backwards from the last child*/</span><br>
+                                    :nth-last-child (5n) {<br>
+                                    <span class = "indent"></span>color: violet;<br>}
+                                </div>
+                                <span class="anchor" id="ftype2"></span>
+                                <li>
+                                    <a href="#ftype2" onclick="toggle_visibility('ftype');">:first-of-type</a>,
+                                    <a href="#ltype2" onclick="toggle_visibility('ltype');">:last-of-type</a>,
+                                    <a href="#otype2" onclick="toggle_visibility('otype');">:only-of-type</a>,
+                                    <a href="#ntype2" onclick="toggle_visibility('ntype');">:nth-of-type()</a>,
+                                    <a href="#nltype2" onclick="toggle_visibility('nltype');">:nth-last-of-type()</a>
+                                </li>
+                                <div class = "code-sample" id ="ftype">
+                                    <span class = "comment">/*Selects any type that is the 1st element among its siblings*/</span><br>
+                                    p:first-of-type {<br>
+                                    <span class = "indent"></span>color: black;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="ltype">
+                                    <span class ="comment">/*Selects any type that is the last element among its siblings*/</span><br>
+                                    p:last-of-type {<br>
+                                    <span class = "indent"></span>color: brown;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="otype">
+                                    <span class = "comment">/*Selects each type if and only if it is the only type element inside its parent*/</span><br>
+                                    p:only-of-type {<br>
+                                    <span class = "indent"></span>color: red;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="ntype">
+                                    <span class = "comment">/*Selects every nth type element among any group of siblings*/</span><br>
+                                    p:nth-of-type(8n) {<br>
+                                    <span class = "indent"></span>color: green;<br>}<br>
+                                </div>
+                                <div class = "code-sample" id ="nltype">
+                                    <span class = "comment">Selects every nth type element but counting backwards from the last one*/</span><br>
+                                    p:nth-last-of-type (2n) {<br>
+                                    <span class = "indent"></span>color: beige;<br>}<br>
+                                </div>
+                                <span class="anchor" id="empty2"></span>
+                                <li><a href="#empty2" onclick="toggle_visibility('empty');">:empty</a></li>
+                                <div class = "code-sample" id ="empty">
+                                    <span class = "comment">/*Selects any type that has no content*/</span><br>
+                                    div:empty {<br>
+                                    <span class = "indent"></span>background: lime;<br>}
+                                </div>
+                            </ul>
+                            <li>Negation Pseudo-Class</li>
+                            <ul>
+                                <span class="anchor" id="not2"></span>
+                                <li><a href="#not2" onclick="toggle_visibility('not');">:not()</a></li>
+                                <div class = "code-sample" id ="not">
+                                    <span class = "comment">/*Selects any element that is not the specified type*/</span><br>
+                                    :not(h1) {<br>
+                                    <span class = "indent"></span>color: grey;<br>}
+                                </div>
+                            </ul>
+                        </ul>
+                        <h3>Pseudo Combinators</h3>
+                        <ul>
+                            <li>provides additional condition</li>
+                            <li>descendant combinator (whitespace, i.e, space, tab, line feed, carriage return, form</li>
+                            <li>child combinator (>)</li>
+                            <li>sibling combinators</li>
+                            <ul>
+                                <li>adjacent sibling combinator (+)</li>
+                                <li>general sibling combinator (~)</li>
+                            </ul>
+                        </ul>
+                        <h3>CSS Rule Precedence</h3>
+                        <ul>
+                            <li>an HTML element may be the subject of the selectors of multiple style rules</li>
+                            <ul>
+                                <li>when such rules target different properties, their effects cascade (i.e, are combined)</li>
+                                <li>when the styles involve the same property, they conflict, and must be resolved such that only one style is
+                                    applied</li>
+                                <li>resolution:</li>
+                                <ul>
+                                    <li>by origin and importance</li>
+                                    <li>by specificity</li>
+                                    <li>by order</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                        <h3>CSS Declarations</h3>
+                        <ul>
+                            <li>properties</li>
+                            <ul>
+                                <li>shorthand properties</li>
+                                <ul>
+                                    <li>allows authors to specify the values of several properties with a single property</li>
+                                    <li>Example:</li>
+                                    <ul>
+                                        <span class="anchor" id="bground2"></span>
+                                        <li><a href="#bground2" onclick="toggle_visibility('bground');">background</a></li>
+                                        <div class = "code-sample" id ="bground">
+                                            background: red no-repeat top left;
+                                        </div>
+                                        <span class="anchor" id="fnt2"></span>
+                                        <li><a href="#fnt2" onclick="toggle_visibility('fnt');">font</a></li>
+                                        <div class = "code-sample" id ="fnt">
+                                            font: 1.6em bold italic sans-serif;
+                                        </div>
+                                        <span class="anchor" id="mrg2"></span>
+                                        <li><a href="#mrg2" onclick="toggle_visibility('mrg');">margin</a></li>
+                                        <div class = "code-sample" id ="mrg">
+                                            margin: 20px 20px 15px 10px;
+                                        </div>
+                                        <span class="anchor" id="pad2"></span>
+                                        <li><a href="#pad2" onclick="toggle_visibility('pad');">padding</a></li>
+                                        <div class = "code-sample" id ="pad">
+                                            padding: 2px 3px;
+                                        </div>
+                                        <span class="anchor" id="bord2"></span>
+                                        <li><a href="#bord2" onclick="toggle_visibility('bord');">border</a></li>
+                                        <div class = "code-sample" id ="bord">
+                                            border: 1px solid black;
+                                        </div>
+                                    </ul>
+                                </ul>
+                                <li>vendor specific extensions (a.k.a, vendor prefixes)</li>
+                                <ul>
+                                    <li>used by browser vendors as a <i>prefix </i> for the names of <i>experimental </i>or <i>non-standard </i>CSS properties; lately, vendors are moving away from vendor prefixes in favor of use-controlled flags or preferences</li>
+                                    <li>Example:</li>
+                                    <ul>
+                                        <li>-webkit-</li>
+                                        <li>-moz-</li>
+                                        <li>-o-</li>
+                                        <li>-ms-</li>
+                                    </ul>
+                                </ul>
+                                <li>custom properties a.k.a, CSS Variables (experimental)</li>
+                                <ul>
+                                    <li>properties names prefixed with --, representing a value that can be reused throughout the document using the var() function</li>
+                                </ul>
+                            </ul>
+                            <li>values</li>
+                            <ul>
+                                <li>value processing</li>
+                                <ul>
+                                    <li><i>declared, cascaded, specified, computed, used, actual</i> values</li>
+                                </ul>
+                                <li>value types</li>
+                                <ul>
+                                    <li>keywords</li>
+                                    <ul>
+                                        <li>CSS-wide keywords</li>
+                                        <ul>
+                                            <li>initial, inherit, unset</li>
+                                        </ul>
+                                        <li>property-specific keywords</li>
+                                    </ul>
+                                    <li>numbers</li>
+                                    <ul>
+                                        <li>integers or reals in deciml notation</li>
+                                    </ul>
+                                    <li>dimensions</li>
+                                    <ul>
+                                        <li>length, angle, duration, frequency, resolution</li>
+                                        <li>length units</li>
+                                        <ul>
+                                            <li>font-relative: em, ex, ch, ren</li>
+                                            <li>viewport-percentage: vw, vh, vmin, vmax</li>
+                                            <li>absolute: cm, mm, in, pt, pc, px</li>
+                                        </ul>
+                                        <li>angle units</li>
+                                        <ul>
+                                            <li>deg, grad, rad, turn</li>
+                                            <li>used in some gradient and transform functions</li>
+                                        </ul>
+                                        <li>duration (or time) units</li>
+                                        <ul>
+                                            <li>s, ms</li>
+                                            <li>used in animation. transition, and related properties</li>
+                                        </ul>
+                                        <li>frequency units</li>
+                                        <ul>
+                                            <li>Hz, kHz</li>
+                                            <li>initially introduced in CSS2 for the <i>aural</i> media type; reintroduced in CSS3, but is currently unused</li>
+                                        </ul>
+                                        <li>resolution units</li>
+                                        <ul>
+                                            <li>dpi, dpcm, dppx</li>
+                                            <li>used in media queries</li>
+                                        </ul>
+                                    </ul>
+                                    <li>percentages</li>
+                                    <ul>
+                                        <li>number with a % suffix</li>
+                                        <li>calculated as a percentage of some value (usually taken from the parent element)</li>
+                                    </ul>
+                                    <li>URLs and URIs</li>
+                                    <ul>
+                                        <li>url() function with an <i>absolute or relative</i> (to the stylesheet) URL parameter</li>
+                                        <li>denotes a pointer to a resource, such as an image or a font</li>
+                                    </ul>
+                                    <li>colors</li>
+                                    <ul>
+                                        <li>color keywords: blue</li>
+                                        <li>RGB hexadecimal notation</li>
+                                        <ul>
+                                            <li>#C0C0C0</li>
+                                            <li>#008000</li>
+                                            <li>#FF00FF</li>
+                                        </ul>
+                                        <li>RGB functions</li>
+                                        <ul>
+                                            <li>rgb(255,0,0)</li>
+                                            <li>rgb(0,0,255)</li>
+                                            <li>rgb(0,255,0)</li>
+                                        </ul>
+                                        <li>HSL functions</li>
+                                        <ul>
+                                            <li>hsl(311, 40%, 69%)</li>
+                                            <li>hsl(64, 40%, 69%)</li>
+                                            <li>hsl(96, 25%, 37%)</li>
+                                        </ul>
+                                        <li>currentcolor, transparent</li>
+                                    </ul>
+                                    <li>strings</li>
+                                    <ul>
+                                        <li>delimited by single quotes (') or double quotes (")</li>
+                                    </ul>
+                                    <li>functions</li>
+                                    <li>miscellaneous types</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                        <h3>CSS Preprocessors, Frameworks, and Polyfills</h3>
+                        <ul>
+                            <li>CSS Preprocessors</li>
+                            <ul>
+                                <li>generates CSS using a custom language syntax that typically inclued features that don't exist in pure CSS (eg. variables, control-flow, nesting, mixins, functions, etc)</li>
+                                <li>Example:</li>
+                                <ul>
+                                    <li>Sass</li>
+                                    <li>Less</li>
+                                    <li>Stylus</li>
+                                </ul>
+                            </ul>
+                            <li>CSS Frameworks</li>
+                            <ul>
+                                <li>provides predefined CSS design functionality that can be reused, extended, or customized</li>
+                                <li>Example:</li>
+                                <ul>
+                                    <li>Bootstrap</li>
+                                    <li>Foundation</li>
+                                    <li>Materialize</li>
+                                </ul>
+                            </ul>
+                            <li>Polyfills</li>
+                            <ul>
+                                <li>provides features that developers expect browsers to provide natively</li>
+                                <li>Example:</li>
+                                <ul>
+                                    <li>Modernizr</li>
+                                    <li>Selectivizr</li>
+                                </ul>
+                            </ul>    
+                        </ul>
+                        <div class="quiz">
+                            <a href="mid_css_quiz.html">Take the quiz!</a>
+                        </div>
+                    </div>
+
+
+                    <div class="link">
+                        <a href="#js2" onclick="toggle_visibility('js');"><h1>JavaScript</h1></a>
+                    </div>
+                    <span class="anchor" id="js2"></span>
+                    <div class="cont" id="js">
+                        <p>The <strong>LiveScript</strong> language was designed at Netscape Communications to make the Java support in Netscape Navigator more accessible to non-Java programmers. LiveScript, like any scripting language, is a <i>loosely-typed</i> language. It is intended for a large audience of Web designers and developers.</p>
+                        <p>In December 1995, LiveScript was renamed JavaScript and released as part of Netscape Navigator 2.0. Except for marketing purposes, JavaScript has nothing to do with the Java language developed and maintained by Sun Microsystems. The Web community started then to manipulate the content of Web documents, in order to bring interactivity and typography to the formerly static Web.</p>
+                        <p><strong>Developers:</strong> Netscape Communications Corporation, Mozilla Foundation, Ecma International</p>
+                        <h3>ECMAScript Editions</h3>
+                        <ul>
+                            <li><strong>ECMAScript 1 (1997)</strong></li>
+                            <li><strong>ECMAScript 2 (1998)</strong><p class="font-italic">Editorial changes.</p></li>
+                            <li><strong>ECMAScript 3 (1999)</strong><p class="font-italic">Added Regular expressions and added the try catch.</p></li>
+                            <li><strong>ECMAScript 4</strong> - was never released.</li>
+                            <li><strong>ECMAScript 5 (2009)</strong><p class="font-italic">Added "strict mode" and added Json support.</p></li>
+                            <li><strong>ECMAScript 5.1 (2011)</strong><p class="font-italic">Editorial changes.</p></li>
+                            <li><strong>ECMAScript 6 (2015)</strong><p class="font-italic">Added classes and modules.</p></li>
+                            <li><strong>ECMAScript 7 (2016)</strong><p class="font-italic">Added exponential operator (**) and added array.prototype.includes</p></li>
+                        </ul> 
+
+                        <h3>JavaScript Execution Environment</h3>                       
+                        <ul>
+                            <li>Core JavaScript<i>(EcmaScript)</i> Language API</li>
+                            <li>(Traditional) Browser Object Model (<i>BOM</i>) API</li>
+                            <ul>
+                                <li> Window,Navigator,Screen,Location,History</li>
+                                <li>Document Object Model (DOM) Api</li>
+                                <ul><li>Node,Document,Element,Text,Attr,Document type,etc.</li>
+                                    <li>Event, EvenTarget, EventListener, etc.</li>
+                                    <li>CSSStylesheet, CSSRule, etc.</li>
+                                </ul> 
+                                <li>Miscellaneous Javascript Web APIs</li>  
+                                <ul>
+                                    <li>gelolocation,IndexedDb,Local storage, push notifaction, service workers, web sockets, web workers, XML HTTP request</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                        <h3>Document Object Model (DOM) API</h3>
+                        <ul>
+                            <li>API that allows access to the HTML document from within scripts associated with the web page.</li>
+                            <li>a parsed HTML document is represented by a <a href="https://www.w3.org/TR/DOM-Level-2-Core/introduction.html">DOM tree</a>, which contains nodes representing elements, element attributes, tectual content and other HTML document components.</li>
+                            <li>Can be accessed via the Document object property of the global window object.</li>
+                        </ul>
+                        <h3>Functionalities</h3>
+                        <ul>
+                            <span class="anchor" id="keyframes2"></span>
+                            <li>Retrieve references to nodes (or node collection)in the DOM</li>
+                            <ul>
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('getElementById()');">getElementById()</a></li>
+                                <div class="code-sample" id="getElementById()">
+                                    <span class="comment">// getElementById()</span><br>
+                                    var myElement = document.getElementById("Hello");<br>
+                                </div>
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('getElementsByTagName()');">getElementsByTagName()</a>, 
+                                    <a href ="#keyframes2" onclick="toggle_visibility('getElementsByClassName()');">getElementsByClassName()</a>
+                                </li>
+                                <div class="code-sample" id="getElementsByTagName()">
+                                    <span class="comment">// getElementByTagName()</span><br>
+                                    var x = document.getElementsByTagName("p");<br>
+                                </div>
+                                <div class="code-sample" id="getElementsByClassName()">
+                                    <span class="comment">// getElementByClassName()</span><br>
+                                    var x = document.getElementsByClassName("intro");<br>                
+                                </div>
+
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('querySelector');">querySelector()</a>, 
+                                    <a href ="#keyframes2" onclick="toggle_visibility('querySelectorAll');">querySelectorAll()</a>
+                                </li>
+                                <div class="code-sample" id="querySelector">
+                                    <span class="comment">// querySelector()</span><br>
+                                    var x = document.querySelector("p.intro");<br>  
+                                </div>
+                                <div class="code-sample" id="querySelectorAll">
+                                    <span class="comment">// querySelectorAll()</span><br>
+                                    var x = document.querySelectorAll("p.intro");<br>
+                                </div>                                                                       
+                            </ul>
+                            <span class="anchor" id="keyframes2"></span>
+                            <li>traverse the DOM tree (from a given node)</li>
+                            <ul>                     
+                                <span class="anchor" id="keyframes2"></span>                               
+                                <li><a href="#keyframes2" onclick="toggle_visibility('firstChild');">firstChild</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('lastChild');">lastChild</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('nextSibling');">nextSibling</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('previousSibling');">previousSibling</a>
+                                </li>
+                                <div class="code-sample" id="firstChild">
+                                    <span class="comment">// firstChild</span><br>
+                                    var x ==document.getElementById("myList").firstChild.innerHTML;<br>
+                                </div>
+                                <div class="code-sample" id="lastChild">
+                                    <span class="comment">// lastChild</span><br>
+                                    var x = document.getElementById("myList").lastChild.innerHTML;<br>        
+                                </div>
+                                <div class="code-sample" id="nextSibling">
+                                    <span class="comment">// nextSibling</span><br>
+                                    var x = document.getElementById("item1").nextSibling.innerHTML;<br>                                     
+                                </div>
+                                <div class="code-sample" id="previousSibling">
+                                    <span class="comment">// previousSibling</span><br>
+                                    var x = document.getElementById("item2").previousSibling.innerHTML;<br>    
+                                </div>                                                                                                                                            
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('firstElementChild');">firstElementChild</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('lastElementChild');">lastElementChild</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('nextElementSibling');">nextElementSibling,</a>
+                                    <a href ="#keyframes2" onclick="toggle_visibility('previousElementSibling');">previousElementSibling</a>
+                                </li>
+                                <div class="code-sample" id="firstElementChild">
+                                    <span class="comment">// firstElementChild</span><br>
+                                    var x = document.getElementById("myList").firstElementChild.innerHTML;<br>                                     
+                                </div>  
+                                <div class="code-sample" id="lastElementChild">
+                                    <span class="comment">// lastElementChild</span><br>
+                                    var x = document.getElementById("myList").lastElementChild.innerHTML;<br>                                     
+                                </div>  
+                                <div class="code-sample" id="nextElementSibling">
+                                    <span class="comment">// nextElementSibling</span><br>
+                                    var x = document.getElementById("item1").nextElementSibling.innerHTML;<br>                                     
+                                </div>  
+                                <div class="code-sample" id="previousElementSibling">
+                                    <span class="comment">// previousElementSibling</span><br>
+                                    <span class="indent">var x = document.getElementById("item2").previousElementSibling<br>.innerHTML;</span><br>                                     
+                                </div>                                                                                                                                              
+                            </ul>
+                            <span class="anchor" id="keyframes2"></span>  
+                            <li>construct/copy nodes</li>
+                            <ul>
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('createElement()');">createElement()</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('createTextNode()');">createTextNode()</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('createAttribute()');">createAttribute()</a>, etc</li>
+                                <div class="code-sample" id="createElement()">
+                                    <span class="comment">// createElement()</span><br>
+                                    var btn = document.createElement("BUTTON");<br>                                     
+                                </div>  
+                                <div class="code-sample" id="createTextNode()">
+                                    <span class="comment">// createTextNode()</span><br>
+                                    var t = document.createTextNode("Hello World");<br>                                     
+                                </div>  
+                                <div class="code-sample" id="createAttribute()">
+                                    <span class="comment">// createAttribute()</span><br>
+                                    var att = document.createAttribute("attrib");<br>                                     
+                                </div>  
+
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('cloneNode()');">cloneNode()</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('importNode()');">importNode()</a>
+                                </li>                                                              
+
+                                <div class ="code-sample" id="cloneNode()">
+                                    <span class="comment">// cloneNode()</span><br>
+                                    var itm = document.getElementById("myList2").lastChild;<br>
+                                    var cln = itm.cloneNode(true);
+                                </div>
+
+
+                                <div class="code-sample" id="importNode()">
+                                    <span class="comment">// importNode()</span><br>
+                                    var newNode = document.importNode(oldNode, true);<br>
+                                </div>                                                            
+                            </ul>
+                            <span class="anchor" id="keyframes2"></span> 
+                            <li>Manipulate the DOM tree</li>
+                            <ul>
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('ManDom');">appendChild()</a>
+                                    <a href ="#keyframes2" onclick="toggle_visibility('ManDom');">insertBefore()</a>,
+                                    <a href ="#keyframes2" onclick="toggle_visibility('ManDom');">replaceChild()</a></li>
+
+                                <div class="code-sample" id="ManDom">
+                                    <span class="comment">// appendChild()</span><br>
+                                    <span class="indent">var node = document.createElement("LI");</span><br>
+                                    <span class="indent">var textnode = document.createTextNode("Water");</span><br>                                     <span class="indent">node.appendChild(textnode); </span><br>
+                                    <span class="comment">// insertBefore()</span><br>
+                                    <span class="indent">var list = document.getElementById("myList");</span><br>                                     <span class="indent">list.insertBefore(newItem, list.childNodes[0]);</span><br>
+                                    <span class="comment">// replaceChild()</span><br>
+                                    <span class="indent">var item = document.getElementById("myList").childNodes[0];</span><br>
+                                    <span class="indent">item.replaceChild(textnode, item.childNodes[0]);</span>                                                                             
+                                </div>
+
+                                <li><a href ="#keyframes2" onclick="toggle_visibility('adoptNode');">adoptNode()</a></li>
+                                <div class="code-sample" id="adoptNode">
+                                    <span class="comment">// adoptNode()</span><br>
+                                    <span class="indent"> var frame = document.getElementsByTagName("IFRAME")[0]</span><br>
+                                    <span class="indent"> var h = frame.contentWindow.document.getElementsByTagName("H1")[0];</span><br>   
+                                    <span class="indent"> var x = document.adoptNode(h);</span><br>                                        
+                                </div>                                
+                            </ul>
+                            <li>miscellaneous attributes and methods</li>
+                            <ul>
+                                <li>nodeType,nodeName,nodeValue</li>
+                                <li>attributes,id,tagName,className</li>
+                                <li>ownerDocument,documentElement</li>
+                                <li>normalize()</li>
+                            </ul>
+                        </ul>
+                        <h3>JSON</h3>
+                        <ul>
+                            <li>stands for JavaScript Object Notation</li>
+                            <li>a textfile with the .json file extension which is used for sharing data.</li>
+                            <li>it is derived from JavaScript, and is available for use in other languages such as, Python, PHP, Java, and Ruby</li>
+                            <li>it is pronounced like the name "Jason".</li>
+                            <li><a href="#jsonsamp2" onclick="toggle_visibility('jsonsamp');">A JSON object looks like this...</a></li>
+
+                            <span class="anchor" id="jsonsamp2"></span> 
+                            <div class="code-sample" id="jsonsamp">
+                                {<br>
+                                <span class="indent"></span>"name" : "Juan",<br>
+                                <span class="indent"></span>"age" : "20"<br>
+                                }
+                            </div>
+                                <p>JSON contents are set inside curly brackets ({ }), and data are defined in key-value pairs ("key" : "value"). every key and value should be enclosed in double quotation marks.</p>
+
+                        </ul>
+                        <div class="quiz">
+                            <a href="mid_js_quiz.html">Take the quiz!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+
+</html>
