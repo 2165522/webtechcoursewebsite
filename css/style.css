@@ -117,9 +117,6 @@ div .jumbotron {
   .navbar a#active {
     color: #eddbcd !important;
     font-weight: bold; }
-  @media (max-width: 34em) {
-    .navbar {
-      background-color: #2C3531 !important; } }
   .navbar .navbar-toggler {
     cursor: pointer;
     outline: 0; }
@@ -130,11 +127,6 @@ div .jumbotron {
     @media (max-width: 34em) {
       .navbar .nav-item {
         padding: 0; } }
-    @media (max-width: 34em) {
-      .navbar .nav-item .nav-link {
-        color: #3f3250 !important;
-        background-color: #2C3531 !important;
-        z-index: 2000; } }
 
 .heading1-img {
   margin-top: 0 !important;

@@ -8,7 +8,7 @@ body{
     a{
         color: white !important;
     }
-    
+
     a:hover {
         color: gray !important;
     }
@@ -62,7 +62,7 @@ a:hover {
     .indent4{
         margin-left: 4em;
     }
-    
+
     @media (max-width: 576px){
         font-size: 3vw;
     }
@@ -165,7 +165,7 @@ div{
         background:url('../img/cover.jpg') no-repeat;
         background-size: cover;
         background-position: center;
-        
+
     }
 }
 
@@ -178,10 +178,6 @@ div{
     z-index: 3000;
     width:100%;
     background-color: #c0b3a0 !important;
-
-    @media(max-width:34em){
-        background-color: #2C3531 !important;
-    }
 
     .navbar-toggler {
         cursor: pointer;
@@ -197,14 +193,6 @@ div{
 
         @media(max-width:34em){
             padding: 0;
-        }
-
-        .nav-link{
-            @media(max-width:34em){
-                color: #3f3250 !important;
-                background-color: #2C3531 !important;
-                z-index: 2000;
-            }
         }
     }
 }
